@@ -8,6 +8,20 @@
       <h1>Spelling Bee</h1>
       <p>Click the button to hear the word</p>
       <button onclick="speak()">Speak</button>
+
+      <form id="wordForm">
+        <label for="word">Word:</label>
+        <input type="text" id="word" name="word">
+        <input type="submit" value="Submit">
+      </form>
+      
+      <div id="error-message"></div>
+
+      <div>
+        <label for="result">Entered:</label>
+        <span id="result"></span>
+      </div>
+
     </main>
   </body>
 </html>
