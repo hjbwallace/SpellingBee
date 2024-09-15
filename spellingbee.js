@@ -2,6 +2,10 @@ function initialise() {
   // Run after page load to ensure the form exists
   const form = document.getElementById('wordForm');
   form.addEventListener('submit', onFormSubmitted);
+
+  document
+    .getElementById('speak-button')
+    .addEventListener('click', speak);
 }
 
 function speak() {
