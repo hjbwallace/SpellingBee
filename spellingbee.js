@@ -9,15 +9,7 @@ function initialise() {
 }
 
 function speak() {
-  // Create a SpeechSynthesisUtterance
-  const utterance = new SpeechSynthesisUtterance("Hello, world!");
-
-  // Select a voice
-  const voices = speechSynthesis.getVoices();
-  utterance.voice = voices[0];
-
-  // Speak the text
-  speechSynthesis.speak(utterance);
+  AudioEngine.speak("Hello static world!");
 }
 
 function onFormSubmitted(e) {
@@ -38,3 +30,17 @@ function onFormSubmitted(e) {
 }
 
 window.addEventListener('load', initialise);
+
+class AudioEngine {
+  static speak(text) {
+    // Create a SpeechSynthesisUtterance
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  // Select a voice
+  const voices = speechSynthesis.getVoices();
+  utterance.voice = voices[0];
+
+  // Speak the text
+  speechSynthesis.speak(utterance);
+  }
+}
