@@ -8,28 +8,29 @@ function initialise() {
     e.preventDefault();
 
     var errorMessageElement = document.getElementById('error-message');
-    var enteredWordElement = document.getElementById('entered-word');
     var resultElement = document.getElementById('result');
     var word = document.getElementById('word').value.trim();
 
-    enteredWordElement.textContent = word;
-
     var result = game.submit(word);
     console.log("Result: " + JSON.stringify(result));
+
+    resultElement.className = ''
 
     if (result.errorMessage) {
       errorMessageElement.textContent = result.errorMessage;
     }
     else if (result.isCorrect) {
       resultElement.textContent = 'Correct!';
+      resultElement.classList.add('result-correct');
     }
     else {
       resultElement.textContent = 'Incorrect!';
+      resultElement.classList.add('result-incorrect');
     }
   });
 
   document
-    .getElementById('speak-button')
+    .getElementById('listen-button')
     .addEventListener('click', (e) => {
       game.speak();
     });

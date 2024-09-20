@@ -1,0 +1,50 @@
+body {
+  font-family: Verdana, sans-serif;
+}
+
+div {
+  width: 100%;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.listen-btn {
+  border-radius: 1rem;
+  margin: 2rem;
+  padding: 2rem 4rem;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+#wordForm {
+  display: flex;
+}
+
+#wordForm input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: larger;
+}
+
+#wordForm input[type="submit"] {
+  padding: 0.5rem;
+}
+
+#result {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem 0;
+}
+
+.result-correct {
+  color: green;
+}
+
+.result-incorrect {
+  color: red;
+}

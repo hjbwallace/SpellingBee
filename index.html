@@ -2,26 +2,28 @@
 <html lang="en">
   <head>
     <script src="spellingbee.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
-  <body>
+  <body class="center">
     <main>
       <h1>Spelling Bee</h1>
-      <p>Click the button to hear the word</p>
-      <button id="speak-button">Speak</button>
 
-      <form id="wordForm">
-        <label for="word">Word:</label>
-        <input type="text" id="word" name="word">
-        <input type="submit" value="Submit">
-      </form>
+      <p>Click the button to hear the word and then try to spell it!</p>
+
+      <div class="center">
+        <button id="listen-button" class="listen-btn center">Listen</button>
+      </div>
+
+      <div>
+        <form id="wordForm">
+          <input type="text" id="word" name="word">
+          <input type="submit" value=">">
+        </form>
+      </div>
       
       <div id="error-message"></div>
 
-      <div>
-        <label for="entered-word">Entered:</label>
-        <span id="entered-word"></span>
-        <div id="result"></div>
-      </div>
+      <div id="result"><div>
 
     </main>
   </body>
