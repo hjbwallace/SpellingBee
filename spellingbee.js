@@ -36,8 +36,17 @@ function initialise() {
     });
 }
 
+class RandomNumberGenerator {
+  static randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
-
+  static randomEntry(source) {
+    return source.length > 0 
+      ? source[this.randomInt(0, source.length - 1)] 
+      : null;
+  }
+}
 
 class AudioEngine {
   static speak(text) {
@@ -46,7 +55,9 @@ class AudioEngine {
 
     // Select a voice
     const voices = speechSynthesis.getVoices();
-    utterance.voice = voices[0];
+    utterance.voice = RandomNumberGenerator.randomEntry(voices);
+    utterance.rate = RandomNumberGenerator.randomInt(8, 20) / 10; // 0.1 - 10
+    utterance.pitch = RandomNumberGenerator.randomInt(5, 15) / 10; // 0-2
 
     // Speak the text
     speechSynthesis.speak(utterance);
